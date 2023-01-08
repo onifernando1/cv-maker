@@ -17,6 +17,7 @@ class General extends Component {
           <input type="email" name="email" id="email"></input>
           <label for="address">Address:</label>
           <input type="address" name="address" id="address"></input>
+          <input type="submit"></input>
         </form>
       </div>
     );
