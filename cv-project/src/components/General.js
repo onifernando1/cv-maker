@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 
 class General extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
 
     this.state = {
       firstName: "",
@@ -12,10 +12,13 @@ class General extends Component {
     };
   }
 
+  letsCreate = this.props.create;
+
   onSubmitForm = (e) => {
     e.preventDefault();
     console.log("submitted");
     console.log(this.state); // not working
+    this.letsCreate();
   };
 
   handleFirstNameChange = (e) => {
