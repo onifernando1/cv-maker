@@ -1,8 +1,13 @@
 import React, { Component } from "react";
+import General from "./components/General";
 
 class App extends Component {
   render() {
-    return <div>Hello World</div>;
+    return (
+      <div>
+        <General />
+      </div>
+    );
   }
 }
 
