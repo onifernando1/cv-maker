@@ -4,21 +4,29 @@ class General extends Component {
   constructor(props) {
     super(props);
 
+    // let letsCreate = this.props.create;
+
     this.state = {
       firstName: "",
       lastName: "",
       email: "",
       address: "",
     };
+
+    // this.createForm();
   }
 
-  letsCreate = this.props.create;
+  hideForm = () => {
+    let form = document.getElementsByClassName("form");
+    form[0].classList.add("hidden");
+    console.log("hidden");
+  };
 
   onSubmitForm = (e) => {
     e.preventDefault();
     console.log("submitted");
     console.log(this.state); // not working
-    this.letsCreate();
+    this.hideForm();
   };
 
   handleFirstNameChange = (e) => {
@@ -51,39 +59,37 @@ class General extends Component {
 
   render() {
     return (
-      <div>
-        <form onSubmit={this.onSubmitForm}>
-          <label for="first-name">First Name:</label>
-          <input
-            onChange={this.handleFirstNameChange}
-            type="text"
-            name="first-name"
-            id="first-name"
-          ></input>
-          <label for="last-name">Last Name:</label>
-          <input
-            onChange={this.handleLastNameChange}
-            type="text"
-            name="last-name"
-            id="last-name"
-          ></input>
-          <label for="email">Email:</label>
-          <input
-            onChange={this.handleEmailChange}
-            type="email"
-            name="email"
-            id="email"
-          ></input>
-          <label for="address">Address:</label>
-          <input
-            onChange={this.handleAddressChange}
-            type="address"
-            name="address"
-            id="address"
-          ></input>
-          <input type="submit"></input>
-        </form>
-      </div>
+      <form className="form" onSubmit={this.onSubmitForm}>
+        <label htmlFor="first-name">First Name:</label>
+        <input
+          onChange={this.handleFirstNameChange}
+          type="text"
+          name="first-name"
+          id="first-name"
+        ></input>
+        <label htmlFor="last-name">Last Name:</label>
+        <input
+          onChange={this.handleLastNameChange}
+          type="text"
+          name="last-name"
+          id="last-name"
+        ></input>
+        <label htmlFor="email">Email:</label>
+        <input
+          onChange={this.handleEmailChange}
+          type="email"
+          name="email"
+          id="email"
+        ></input>
+        <label htmlFor="address">Address:</label>
+        <input
+          onChange={this.handleAddressChange}
+          type="address"
+          name="address"
+          id="address"
+        ></input>
+        <input type="submit"></input>
+      </form>
     );
   }
 }

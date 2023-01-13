@@ -8,24 +8,27 @@ class App extends Component {
   constructor() {
     super();
 
-    this.state = {};
+    this.state = { general: "" };
   }
 
-  create = () => {
-    console.log("create function");
+  saveGeneral = (info = "") => {
+    console.log("save general");
+    this.setState({ general: info });
+    console.log(this.state);
+    console.log();
   };
 
-  hello = () => {
-    console.log("hello");
-  };
+  // hello = () => {
+  //   console.log("hello");
+  // };
 
   render() {
     return (
       <div>
-        <General create={create} />
-        <Education />
-        <Experience />
-        <Overview author="bob" />
+        <General />
+        {/* <Education /> */}
+        {/* <Experience /> */}
+        {/* <Overview author="bob" /> */}
       </div>
     );
   }
